@@ -153,8 +153,15 @@ img {
   top: 2rem;
   background-color: var(--first-color);
 }
-.nav__logo {
-  color: var(--second-color);
+ .nav__logo {
+  /* it's a image logo not text */
+  background-image: url(./about.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
 }
 .nav__toggle {
   color: var(--second-color);
@@ -448,16 +455,6 @@ img {
   .nav__link {
     color: var(--second-color);
   }
-  .nav__logo {
-  /* it's a image logo not text */
-  background-image: url(./about.jpg);
-  background-size: cover;
-  background-position: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: inline-block;
-}
   .home {
     padding: 8rem 0 2rem;
   }
