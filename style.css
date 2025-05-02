@@ -491,3 +491,26 @@ img {
     width: 450px;
   }
 }
+/* update by me  */
+.project-info {
+  padding: var(--spacing-sm);
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: black;
+  text-align: center;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: black;
+  text-align: center;
+}
+.project-text-space {
+  background-color: hsl(0, 0%, 100%);
+  padding: var(--spacing-sm);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
