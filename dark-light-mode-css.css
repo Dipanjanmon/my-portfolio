@@ -1,0 +1,236 @@
+/* Dark Mode and additional features styles */
+
+/* Theme variables */
+:root {
+  /* Light theme (default) */
+  --bg-color: #fff;
+  --second-bg-color: #f9f9f9;
+  --text-color: hsl(var(--hue-color), 56%, 12%);
+  --main-color: hsl(var(--hue-color), 89%, 60%);
+  --shadow-color: rgba(14, 36, 49, 0.15);
+  --body-bg: #fff;
+  --container-bg: #fff;
+  --form-bg: #fff;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --bg-color: #1a1a2e;
+  --second-bg-color: #16213e;
+  --text-color: #e2e2e2;
+  --main-color: hsl(var(--hue-color), 89%, 70%);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --body-bg: #0f3460;
+  --container-bg: #16213e;
+  --form-bg: #1a1a2e;
+}
+
+/* Apply theme colors */
+body {
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  transition: all 0.5s ease;
+}
+
+.section-title {
+  color: var(--main-color);
+}
+
+.l-header {
+  background-color: var(--bg-color);
+  box-shadow: 0 1px 8px var(--shadow-color);
+}
+
+.nav__link {
+  color: var(--text-color);
+}
+
+.skills__data, .work__img, .contact__input {
+  background-color: var(--container-bg);
+  box-shadow: 0px 4px 25px var(--shadow-color);
+}
+
+.contact__input {
+  background-color: var(--form-bg);
+  color: var(--text-color);
+  border-color: var(--main-color);
+}
+
+.project-text-space {
+  background-color: var(--container-bg);
+  color: var(--text-color);
+}
+
+/* Theme toggle switch */
+.theme-toggle {
+  margin-left: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch__input {
+  opacity: 0;
+  position: absolute;
+}
+
+.theme-switch__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50px;
+  height: 26px;
+  background-color: #434343;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.theme-switch__label i {
+  font-size: 14px;
+  color: #f1c40f;
+  z-index: 1;
+}
+
+.theme-switch__slider {
+  position: absolute;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.theme-switch__input:checked + .theme-switch__label .theme-switch__slider {
+  transform: translateX(24px);
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top i {
+  font-size: 24px;
+}
+
+/* Project filter styles */
+.work__filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--mb-4);
+  gap: 10px;
+}
+
+.work__filter-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--main-color);
+  background-color: transparent;
+  color: var(--text-color);
+  font-weight: var(--font-semi);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.work__filter-btn.active, .work__filter-btn:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+/* Typing effect styles */
+.profession-container {
+  position: relative;
+  height: 32px;
+  overflow: hidden;
+}
+
+.profession-text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.profession-options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slide 12s steps(4) infinite;
+}
+
+.profession-options span {
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  color: var(--main-color);
+}
+
+@keyframes slide {
+  100% {
+    top: -128px; /* 32px * 4 options */
+  }
+}
+
+/* Animated skill bars */
+.skills__bar {
+  width: 0;
+}
+
+/* Mobile Responsive Adjustments */
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    background-color: var(--second-bg-color);
+  }
+  
+  .nav__link {
+    color: var(--text-color);
+  }
+  
+  .work__filter {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .work__filter-btn {
+    margin: 0.25rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .theme-toggle {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Smooth transitions for theme change */
+.l-header, body, .nav__link, .skills__data, .work__img, 
+.contact__input, .project-text-space, .footer, .button {
+  transition: all 0.5s ease;
+}
