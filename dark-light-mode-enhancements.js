@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const thirdLine = document.createElement('div');
         thirdLine.className = 'profession-container';
         thirdLine.innerHTML = `
-            <span class="profession-text">${titleParts[2]}</span>
+            <span class="profession-text">${titleParts[2] || ' '}</span>
             <div class="profession-options">
                 <span>Software Developer</span>
                 <span>UI/UX Designer</span>
