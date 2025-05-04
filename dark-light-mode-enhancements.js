@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Add project filter buttons
+   // Add project filter buttons
     const workSection = document.querySelector('.work__container');
     if (workSection) {
         const filterContainer = document.createElement('div');
@@ -61,13 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
             <button class="work__filter-btn" data-filter="app">App</button>
             <button class="work__filter-btn" data-filter="design">Design</button>
         `;
-        workSection.parentNode.insertBefore(filterContainer, workSection);
         
-        // Add filter data attributes to work items
-        const workItems = document.querySelectorAll('.work__img');
+        // Insert filter buttons before the project cards container
+        const projectSection = document.querySelector('#work');
+        projectSection.insertBefore(filterContainer, workSection);
+        
+        // Add filter data attributes to project cards
+        const projectCards = document.querySelectorAll('.project-card');
         const categories = ['web', 'app', 'design'];
         
-        workItems.forEach((item, index) => {
+        projectCards.forEach((item, index) => {
             // Assign random categories for demo
             const category = categories[index % categories.length];
             item.setAttribute('data-category', category);
@@ -83,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const filter = this.getAttribute('data-filter');
                 
-                workItems.forEach(item => {
+                projectCards.forEach(item => {
                     if (filter === 'all' || item.getAttribute('data-category') === filter) {
                         item.style.display = 'block';
                     } else {
@@ -93,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
     // Add typing effect to title
     const homeTitle = document.querySelector('.home__title');
     if (homeTitle) {
