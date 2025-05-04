@@ -312,7 +312,68 @@ img {
 .skills__img {
   border-radius: 0.5rem;
 }
+/* Add these styles to your existing CSS file */
 
+/* Technical Skills */
+.skills__bar.skills__react {
+    width: 85%;
+}
+
+.skills__bar.skills__node {
+    width: 80%;
+}
+
+/* Tools & Frameworks */
+.skills__tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: var(--mb-4);
+}
+
+.skills__tool {
+    background-color: hsl(var(--hue-color), 89%, 92%);
+    color: var(--second-color);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    box-shadow: 0px 2px 8px rgba(14, 36, 49, 0.08);
+}
+
+/* Soft Skills */
+.skills__soft {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    text-align: left;
+}
+
+.skills__soft-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skills__soft-item i {
+    color: var(--first-color);
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .skills__soft {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills__tools {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .skills__container {
+        text-align: left;
+    }
+}
 /* Project Section Styles */
 .project-section-description {
   text-align: center;
