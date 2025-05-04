@@ -51,7 +51,25 @@ const sr = ScrollReveal({
 //     reset: true
 });
 
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
+// Update your existing ScrollReveal section to include these new animations
+sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text, .education__subtitle, .resume__box',{}); 
+sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img, .education__content, .resume__button',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+sr.reveal('.skills__data, .work__img, .contact__input, .education__rounder, .about__info-item',{interval: 200});
+
+// Add smooth scrolling for the education and resume links
+document.querySelector('a[href="#education"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#education').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('a[href="#resume"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#resume').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Optional: Add click tracking for resume downloads
+document.querySelector('.resume__button').addEventListener('click', function() {
+    console.log('Resume downloaded');
+    // You could add analytics tracking here if desired
+});
